@@ -1,41 +1,23 @@
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
-    name: myImage
-
-    labels:
-
-        app: myImage
-
+  name: myimage
+  labels:
+    app: myimage
 spec:
-
-    replicas: 2
-
-    selector:
-
-        matchLabels:
-
-            app: myImage
-
-    template:
-
-        metadata:
-
-            labels:
-
-                app: myImage
-
-        spec:
-
-            containers:
-
-           —name: myImage
-
-               image: myImage:new
-
-               imagePullPolicy: Never
-
-               args:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myimage
+  template:
+    metadata:
+      labels:
+        app: myimage
+    spec:
+      containers:
+      - name: myimage
+        image: myimage:new
+        imagePullPolicy: Never
+        args:
+          - "arg1"
+          - "arg2"
