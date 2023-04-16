@@ -5,8 +5,8 @@ WORKDIR /app
 COPY . . 
 # Set the root password and create a new user and database
 ENV MYSQL_ROOT_PASSWORD=mysecretpassword
-# ENV MYSQL_USER=myuser
-# ENV MYSQL_PASSWORD=mypassword
+ENV MYSQL_USER=myuser
+ENV MYSQL_PASSWORD=mypassword
 
 
 # Copy the custom configuration file to the container
