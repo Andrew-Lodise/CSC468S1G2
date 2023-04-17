@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myimage
-        image: myimage:new
+        image: myimage:latest
         imagePullPolicy: Never
         args:
           - "arg1"
