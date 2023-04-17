@@ -17,7 +17,7 @@ spec:
       containers:
       - name: nodejsimage
         image: nodejsimage:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         args:
           - "arg1"
           - "arg2"
