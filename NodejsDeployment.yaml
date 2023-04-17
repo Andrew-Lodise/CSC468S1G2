@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: NodeJsImage
+  name: nodejsimage
   labels:
-    app: NodejsImage
+    app: nodejsimage
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: NodejsImage
+      app: nodejsimage
   template:
     metadata:
       labels:
-        app: NodejsImage
+        app: nodejsimage
     spec:
       containers:
-      - name: NodejsImage
-        image: NodejsImage:latest
+      - name: nodejsimage
+        image: nodejsimage:latest
         imagePullPolicy: Never
         args:
           - "arg1"
