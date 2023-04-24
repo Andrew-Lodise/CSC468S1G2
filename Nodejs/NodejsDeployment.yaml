@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-node-app
+  name: nodejsimage
 spec:
   selector:
     matchLabels:
-      app: my-node-app
+      app: nodejsimage
   replicas: 3
   template:
     metadata:
       labels:
-        app: my-node-app
+        app: nodejsimage
     spec:
       containers:
-      - name: my-node-app
-        image: your-docker-registry/my-node-app:latest
+      - name: nodejsimage
+        image: csc468/nodejsimage:latest
         ports:
         - containerPort: 3000
