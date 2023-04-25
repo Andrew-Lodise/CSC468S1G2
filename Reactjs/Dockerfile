@@ -13,11 +13,8 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY app /app
 
-# Build the application for production
+# Build the application
 RUN npm run build
-
-# Set the environment variable to specify that this is a production build
-ENV NODE_ENV=production
 
 # Expose port 3000 to the outside world
 EXPOSE 3000
