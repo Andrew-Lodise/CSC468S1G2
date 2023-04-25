@@ -14,7 +14,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: al964440/codercommune:0.0.2
+      - image: al964440/codercommune:0.0.3
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
