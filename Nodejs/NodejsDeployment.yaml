@@ -13,7 +13,7 @@ spec:
         app: nodejsimage
     spec:
       containers:
-      - name: nodejsimage
+      - name: nodejscont
         image: csc468/nodejsimage:latest
         ports:
         - containerPort: 3000
