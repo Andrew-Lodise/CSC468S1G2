@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
+# Copy the app directory to the container
+COPY app /app
+
 # Set the port that the container will listen on
 EXPOSE 3000
 
