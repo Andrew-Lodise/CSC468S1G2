@@ -10,8 +10,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install react-scripts globally
+RUN npm install react-scripts -g
+
 # Copy the rest of the application code to the working directory
-COPY app /app
+COPY . .
 
 # Build the application
 RUN npm run build
