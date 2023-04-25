@@ -16,9 +16,6 @@ COPY . .
 # Build the application for production
 RUN npm run build
 
-# Set the environment variable to specify that this is a production build
-ENV NODE_ENV=production
-
 # Expose port 3000 to the outside world
 EXPOSE 3000
 
