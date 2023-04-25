@@ -15,7 +15,6 @@ RUN npm install -g react-scripts
 
 # Copy the application files to the container
 COPY app /app
-COPY src /app/src
 
 # Copy the public files to the container
 COPY public ./public
