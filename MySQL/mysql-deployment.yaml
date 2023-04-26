@@ -22,7 +22,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mysql-secret
-              key: test1234
+              key: password
         ports:
         - containerPort: 3306
           name: mysql
@@ -41,7 +41,6 @@ metadata:
 spec:
   ports:
   - port: 3306
-    targetPort: 3306
   selector:
     app: mysql
   type: ClusterIP
