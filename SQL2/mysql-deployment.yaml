@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: mysql-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
@@ -31,7 +32,7 @@ spec:
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: mysql-pvc
 ---
 apiVersion: v1
 kind: Service
