@@ -1,15 +1,16 @@
-// index.js
-const http = require('http');
+var express = require('express');
+var app = express();
 
-const hostname = '0.0.0.0';
-const port = 3000;
+app.get('/', function (req, res) {
+  res.send('{ "response": "Hello From Thetips4you" }');
+  });
+  
+app.get('/will', function (req, res) {
+    res.send('{ "response": "Hello World" }');
+    });
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, world!\n');
+app.get('/ready', function (req, res) {
+    res.send('{ "response": " Great!, It works!" }');
 });
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(process.env.PORT || 3000);
+module.exports = app;
