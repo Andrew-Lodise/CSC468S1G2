@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejsimage
+  name: nodejs-deployment
+  labels:
+    app: nodejsimage
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: nodejsimage
-  replicas: 1
   template:
     metadata:
       labels:
         app: nodejsimage
     spec:
       containers:
-      - name: nodejscont
-        image: gdeiley/csc468:latest
+      - name: nodeserver
+        image: gdeiley/nodejsimage:latest
         ports:
         - containerPort: 3000
