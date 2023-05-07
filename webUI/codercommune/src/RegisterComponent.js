@@ -7,15 +7,18 @@ const RegisterPage = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-
+  var errorMessage
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/register', { user, password });
       setMessage(response.data.message);
     } catch (error) {
-      setMessage('Error: ' + error.message);
-    }
+    if (error.message === "Request failed with status code 500") {
+      errorMessage = "User/Password Combination not possible, please try a new one";
+    } else { errorMessage= 'Error: ' +error.message;}
+    setMessage(errorMessage);
+  }
   };
 
   return (

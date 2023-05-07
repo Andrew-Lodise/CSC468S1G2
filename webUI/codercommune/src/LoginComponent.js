@@ -9,12 +9,17 @@ const LoginComponent = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+
   var errorMessage;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', { user, password });
+      const token = response.data.token;
+      localStorage.setItem('token', token);
       setMessage(response.data.message);
+      window.location.assign("/WhatsHappening")
     } catch (error) {
       if (error.message === "Request failed with status code 401") {
         errorMessage = "Wrong Username/Password";
@@ -22,6 +27,23 @@ const LoginComponent = () => {
       setMessage(errorMessage);
     }
   };
+
+  
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const checkLoggedIn = async () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        await axios.get('/api/protected', { headers: { Authorization: token } });
+        setLoggedIn(true);
+      } catch (error) {
+        console.log(error.response.data.error);
+      }
+    }
+  };
+
+  checkLoggedIn();
 
   return (
         <div>
@@ -52,6 +74,7 @@ const LoginComponent = () => {
             <Button style={{ margin: '1.75em', marginTop: '0.6em' }} variant="contained" type="submit">Login</Button>
           </form>
           {message && <p>{message}</p>}
+
         </div>
   );
 };
