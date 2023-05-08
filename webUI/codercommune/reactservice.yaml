@@ -8,6 +8,6 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 4000
       targetPort: 3001
   type: LoadBalancer
