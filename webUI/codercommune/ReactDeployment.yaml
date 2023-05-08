@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: react-application
-        image: <your-image-name>
+        image: gdeiley/react-application:latest
         ports:
         - containerPort: 3000
