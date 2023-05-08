@@ -16,4 +16,4 @@ spec:
       - name: reactserver
         image: gdeiley/react-application:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
