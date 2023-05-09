@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
 function LoginCheck({ children }) {
@@ -30,8 +29,10 @@ function LoginCheck({ children }) {
     console.log("Logged in user " + {user})
     return children; // Render the child components
   } else {
-    return <Button href="/" color="secondary" style={{ margin: '1.75em', marginTop: '0.6em' }} variant="contained" type="button">Login / Register</Button>;
-
+    return (<>
+      <h1>Please Login or Register to Continue</h1>
+      <Button href="/" color="secondary" style={{ margin: '1.75em', marginTop: '0.6em' }} variant="contained" type="button">Login / Register</Button>
+      </>);
     // You can also redirect the user to the login page here
   }
 }

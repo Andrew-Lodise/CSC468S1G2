@@ -45,9 +45,6 @@ const CreatePost = () => {
 
   return (
     <>
-
-
-
       <h4>Create Post</h4>
       <form onSubmit={handleSubmit}>
       <Grid item sm={6}>
@@ -62,7 +59,7 @@ const CreatePost = () => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
         />
-    </Grid>
+      </Grid>
         <br />
         <Button style={{ margin: '1.75em', marginTop: '0.6em' }} variant="contained" type="submit">Create Post</Button>
       </form>

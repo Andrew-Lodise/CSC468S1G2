@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import WhatsHappening from "./pages/WhatsHappening";
 import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage";
@@ -30,7 +31,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="WhatsHappening" element={<WhatsHappening />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="AboutUs" element={<AboutUs />} />
+          <Route path="Contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

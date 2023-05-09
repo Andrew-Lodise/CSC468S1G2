@@ -42,7 +42,7 @@ const LoginComponent = () => {
       }
     }
   };
-
+  console.log(loggedIn);
   checkLoggedIn();
 
   return (
